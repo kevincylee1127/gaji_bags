@@ -1,0 +1,422 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gaji Bags: The Everything Bag of Taiwan</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800&family=Playfair+Display:ital,wght@0,700;1,400&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            /* Authentic Gaji Tricolor Palette */
+            --gaji-red: #D92525;
+            --gaji-green: #008A45;
+            --gaji-blue: #0055A5;
+            --gaji-bg: #FAF9F6;
+            --text-dark: #1A1A1A;
+            --text-muted: #555555;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background-color: var(--gaji-bg);
+            color: var(--text-dark);
+            line-height: 1.7;
+        }
+
+        /* Hero Tricolor Stripe Bar */
+        .tricolor-bar {
+            height: 16px;
+            background: linear-gradient(to right, 
+                var(--gaji-red) 0% 33.33%, 
+                var(--gaji-green) 33.33% 66.66%, 
+                var(--gaji-blue) 66.66% 100%);
+        }
+
+        /* Header / Hero Section */
+        header {
+            background-color: #ffffff;
+            padding: 60px 20px 40px;
+            text-align: center;
+            border-bottom: 3px solid var(--gaji-red);
+            position: relative;
+        }
+
+        .badge {
+            display: inline-block;
+            background: linear-gradient(135deg, var(--gaji-red), var(--gaji-blue));
+            color: #ffffff;
+            font-size: 0.85rem;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 1.8px;
+            padding: 8px 20px;
+            border-radius: 50px;
+            margin-bottom: 24px;
+        }
+
+        h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 3rem;
+            color: var(--text-dark);
+            margin-bottom: 16px;
+            line-height: 1.2;
+        }
+
+        /* Title Colors Split */
+        .title-ga { color: var(--gaji-red); }
+        .title-ji { color: var(--gaji-green); }
+        .title-bags { color: var(--gaji-blue); }
+
+        .subtitle {
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: var(--gaji-red);
+            max-width: 720px;
+            margin: 0 auto;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        /* Main Hero Image Section */
+        .hero-kv-container {
+            max-width: 900px;
+            margin: 40px auto -10px;
+            padding: 0 20px;
+        }
+
+        .dihua-hero-kv {
+            position: relative;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 20px 45px rgba(0,0,0,0.25);
+            background-color: #1a1a1a;
+        }
+
+        .dihua-hero-kv img {
+            width: 100%;
+            height: auto;
+            display: block;
+            object-fit: cover;
+        }
+
+        /* Container Layout */
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 50px 20px;
+        }
+
+        /* Pure Tricolor Mesh Card */
+        .gaji-mesh-card {
+            background: 
+                linear-gradient(rgba(0, 0, 0, 0.42), rgba(0, 0, 0, 0.42)),
+                repeating-linear-gradient(90deg, 
+                    rgba(255, 255, 255, 0.25) 0px, 
+                    rgba(255, 255, 255, 0.25) 2px, 
+                    rgba(0, 0, 0, 0.15) 2px, 
+                    rgba(0, 0, 0, 0.15) 6px),
+                repeating-linear-gradient(0deg, 
+                    var(--gaji-red) 0px, 
+                    var(--gaji-red) 26px, 
+                    var(--gaji-green) 26px, 
+                    var(--gaji-green) 52px, 
+                    var(--gaji-blue) 52px, 
+                    var(--gaji-blue) 78px);
+            border-radius: 16px;
+            padding: 50px 40px;
+            margin-bottom: 60px;
+            box-shadow: 0 12px 32px rgba(0,0,0,0.18);
+            border: 4px solid #ffffff;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .gaji-mesh-card h3 {
+            font-size: 2rem;
+            font-family: 'Playfair Display', serif;
+            font-weight: 700;
+            margin-bottom: 16px;
+            color: #ffffff;
+            letter-spacing: 0.5px;
+            text-shadow: 0 2px 8px rgba(0, 0, 0, 0.8);
+        }
+
+        .gaji-mesh-card p {
+            color: #ffffff;
+            font-size: 1.15rem;
+            font-weight: 500;
+            margin-bottom: 0;
+            line-height: 1.8;
+            text-shadow: 0 1px 6px rgba(0, 0, 0, 0.8);
+        }
+
+        /* Section Title with Tricolor Accent */
+        .section-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.2rem;
+            color: var(--text-dark);
+            margin-bottom: 30px;
+            position: relative;
+            padding-bottom: 12px;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 90px;
+            height: 5px;
+            background: linear-gradient(to right, var(--gaji-red) 33.3%, var(--gaji-green) 33.3% 66.6%, var(--gaji-blue) 66.6%);
+            border-radius: 3px;
+        }
+
+        p {
+            margin-bottom: 22px;
+            font-size: 1.08rem;
+            color: #2c2c2c;
+        }
+
+        /* Feature Cards for Modern Variations */
+        .feature-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+            margin: 40px 0 60px;
+        }
+
+        .feature-card {
+            background-color: #ffffff;
+            padding: 24px;
+            border-radius: 12px;
+            box-shadow: 0 6px 18px rgba(0,0,0,0.05);
+            border-top: 6px solid var(--text-dark);
+        }
+
+        .feature-card.red-card { border-top-color: var(--gaji-red); }
+        .feature-card.green-card { border-top-color: var(--gaji-green); }
+        .feature-card.blue-card { border-top-color: var(--gaji-blue); }
+
+        .feature-card h4 {
+            font-size: 1.2rem;
+            margin-bottom: 10px;
+        }
+
+        .red-card h4 { color: var(--gaji-red); }
+        .green-card h4 { color: var(--gaji-green); }
+        .blue-card h4 { color: var(--gaji-blue); }
+
+        .feature-card p {
+            font-size: 0.95rem;
+            margin-bottom: 0;
+            color: var(--text-muted);
+        }
+
+        /* Timeline with Tricolor Nodes */
+        .timeline {
+            position: relative;
+            margin: 50px 0;
+            padding-left: 35px;
+            border-left: 4px solid #e2e8f0;
+        }
+
+        .timeline-item {
+            position: relative;
+            margin-bottom: 45px;
+        }
+
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: -44px;
+            top: 4px;
+            width: 18px;
+            height: 18px;
+            border-radius: 50%;
+            background-color: #ffffff;
+            border: 4px solid var(--text-dark);
+            box-shadow: 0 0 0 3px #ffffff;
+        }
+
+        .timeline-item.node-red::before { border-color: var(--gaji-red); }
+        .timeline-item.node-green::before { border-color: var(--gaji-green); }
+        .timeline-item.node-blue::before { border-color: var(--gaji-blue); }
+
+        .timeline-year {
+            font-weight: 800;
+            font-size: 1.15rem;
+            margin-bottom: 6px;
+        }
+
+        .node-red .timeline-year { color: var(--gaji-red); }
+        .node-green .timeline-year { color: var(--gaji-green); }
+        .node-blue .timeline-year { color: var(--gaji-blue); }
+
+        .timeline-title {
+            font-size: 1.3rem;
+            font-weight: 700;
+            color: var(--text-dark);
+            margin-bottom: 10px;
+        }
+
+        /* Clean Quote Box */
+        .quote-box {
+            background-color: #ffffff;
+            padding: 35px 30px;
+            border-radius: 12px;
+            margin: 50px 0;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.06);
+            position: relative;
+            border-left: none;
+            text-align: center;
+        }
+
+        .quote-box p {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.35rem;
+            font-style: italic;
+            color: var(--text-dark);
+            margin: 0;
+            line-height: 1.6;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #111111;
+            color: #ffffff;
+            text-align: center;
+            padding: 0 0 40px;
+            margin-top: 80px;
+        }
+
+        footer .footer-stripe {
+            height: 12px;
+            background: linear-gradient(to right, 
+                var(--gaji-red) 0% 33.33%, 
+                var(--gaji-green) 33.33% 66.66%, 
+                var(--gaji-blue) 66.66% 100%);
+            margin-bottom: 30px;
+        }
+
+        footer p {
+            color: #888888;
+            font-size: 0.95rem;
+            margin-bottom: 0;
+        }
+
+        /* Responsive Adjustments for Mobile */
+        @media (max-width: 768px) {
+            h1 { font-size: 2.2rem; }
+            .feature-grid { grid-template-columns: 1fr; }
+            .container { padding: 30px 15px; }
+            .gaji-mesh-card { padding: 35px 22px; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="tricolor-bar"></div>
+
+    <header>
+        <span class="badge">Taiwan Cultural Heritage</span>
+        <h1><span class="title-ga">Ga</span><span class="title-ji">ji</span> <span class="title-bags">Bags</span></h1>
+        <p class="subtitle">The Everything Bag of Taiwan</p>
+    </header>
+
+    <!-- Key Visual Banner -->
+    <div class="hero-kv-container">
+        <div class="dihua-hero-kv">
+            <img src="gaji.jpeg" alt="Taiwanese Ga Ji Bags Store at Dihua Street">
+        </div>
+    </div>
+
+    <main class="container">
+
+        <!-- Mesh Banner Card -->
+        <div class="gaji-mesh-card">
+            <h3>Durable, Affordable & Practical</h3>
+            <p>Gaji bags—traditional Taiwanese shopping bags—are colorful woven nylon bags commonly used for shopping or as an everyday carry-all. They are also known affectionately as "grandma bags" because older women often carried them when shopping at local markets.</p>
+        </div>
+
+        <!-- Section 1 -->
+        <section>
+            <h2 class="section-title">What is a Gaji Bag?</h2>
+            <p><strong>Gaji bags</strong> are traditional Taiwanese shopping bags made from colorful woven nylon mesh. Extremely durable, affordable, and practical, they have long served as a household essential across Taiwan.</p>
+            <p>Also fondly referred to as <strong>"grandma bags,"</strong> this nickname stems from the past when older women frequently carried them while grocery shopping at local traditional markets.</p>
+        </section>
+
+        <!-- Section 2: Historical Timeline -->
+        <section>
+            <h2 class="section-title">The Story & History</h2>
+            
+            <div class="timeline">
+                
+                <div class="timeline-item node-green">
+                    <div class="timeline-year">Japanese Colonial Period</div>
+                    <div class="timeline-title">Origins in Jingliao, Tainan</div>
+                    <p>Gaji bags were first made in the rural village of <strong>Jingliao in northern Tainan</strong> during the Japanese colonial period. The original bags were crafted by hand using natural plants.</p>
+                </div>
+
+                <div class="timeline-item node-red">
+                    <div class="timeline-year">1960s</div>
+                    <div class="timeline-title">Nylon & Machine Production</div>
+                    <p>During Taiwan's industrialization in the 1960s, manufacturers began producing them with <strong>red, blue, and green nylon</strong>. Around the same time, machines were employed to manufacture the bags, making them durable, affordable, and practical—quickly turning them into a household essential.</p>
+                </div>
+
+                <div class="timeline-item node-blue">
+                    <div class="timeline-year">1980s</div>
+                    <div class="timeline-title">Two-Decade Decline</div>
+                    <p>When the economy improved in the 1980s, the bags fell out of favor for about two decades. With more money on hand, people turned to newer and more fashionable products.</p>
+                </div>
+
+                <div class="timeline-item node-red">
+                    <div class="timeline-year">Present Day</div>
+                    <div class="timeline-title">The Vintage Fashion Comeback</div>
+                    <p>Today, with vintage fashion back in style, Gaji bags have made a strong comeback and are more popular than ever before. They have even been adapted into a wide variety of modern designs.</p>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- Modern Variations Grid -->
+        <h2 class="section-title">Adapted Modern Designs</h2>
+        <div class="feature-grid">
+            <div class="feature-card red-card">
+                <h4>Fanny Packs</h4>
+                <p>Reimagined into trendy waist bags for hands-free urban exploration and daily activities.</p>
+            </div>
+            <div class="feature-card green-card">
+                <h4>Backpacks</h4>
+                <p>Designed into casual backpacks, blending nostalgic woven mesh with ergonomic utility.</p>
+            </div>
+            <div class="feature-card blue-card">
+                <h4>Coin Purses</h4>
+                <p>Crafted into compact, charming coin purses—a perfect everyday vintage accessory.</p>
+            </div>
+        </div>
+
+        <!-- Clean Quote Box -->
+        <div class="quote-box">
+            <p>“For the older generation, Gaji bags bring back fond memories; for the younger generation, they serve as an important connection to the past.”</p>
+        </div>
+
+    </main>
+
+    <footer>
+        <div class="footer-stripe"></div>
+        <p>&copy; 2026 Taiwan Cultural Heritage Series | Preserving Local Stories & Traditions</p>
+    </footer>
+
+</body>
+</html>
